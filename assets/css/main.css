@@ -465,12 +465,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   color: #171717;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6, .h1 {
   font-family: "Poppins", sans-serif;
-  line-height: 1.618;
+  /* line-height: 1.618; */
 }
 
 a:hover {
@@ -486,8 +486,8 @@ a, button {
 }
 
 .py-6 {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .pb-6 {
@@ -542,11 +542,11 @@ a, button {
 }
 
 .title-box h3 {
-  font-size: 72px;
-  font-weight: 700;
+  font-size: 50px;
+  font-weight: 600;
   letter-spacing: 4px;
   text-shadow: 0 8px rgba(0, 0, 0, 0.02);
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .title-box span {
@@ -587,7 +587,7 @@ a, button {
 -------------------------*/
 .header {
   transition: all 0.8s ease;
-  background-color: #fff;
+  background-color: #d8eaf1;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -873,7 +873,7 @@ canvas.particles-js-canvas-el {
 }
 
 .about-02 .title-box h3 {
-  font-size: 36px;
+  font-size: 30px;
   text-transform: inherit;
   letter-spacing: 0;
 }
@@ -1421,7 +1421,7 @@ canvas.particles-js-canvas-el {
 }
 
 .testimonial-02 .testimonial-item::before {
-  content: "\eb65";
+  /* content: "\eb65"; */
   font-family: LineIcons, sans-serif;
   font-size: 64px;
   transform: rotateZ(180deg);
@@ -1438,9 +1438,9 @@ canvas.particles-js-canvas-el {
 }
 
 .testimonial-02 .testimonial-comment {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 300;
-  font-style: italic;
+  /* font-style: italic; */
   margin: 24px auto;
 }
 
