@@ -123,7 +123,7 @@ $window.on("load", (function() {
          var $showMore = $('#showMore');
          $grid.isotope({
              itemSelector: '.portfolio-item',
-             layoutMode: 'masonryHorizontal',
+             layoutMode: 'masonry',
          });
          $pfilter.find('a').on("click",function() {
              var filterValue = $(this).attr('data-filter');
