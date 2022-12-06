@@ -883,7 +883,7 @@ canvas.particles-js-canvas-el {
 }
 
 .about-02 .about-image img {
-  width: 100%;
+  width: 80%;
   border-radius: 8px;
   padding: 4px;
   border: 1px solid #ccc;
@@ -1216,7 +1216,7 @@ canvas.particles-js-canvas-el {
 }
 
 .portfolio-02 .portfolio-box:hover::before {
-  transform: scale(1);
+  transform: scale(5);
   opacity: 1;
 }
 
