@@ -265,7 +265,16 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .job__list li { margin-top: 4px; }
 .job__list li::marker { color: var(--accent); }
 
+.job__tech { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 14px 0 0; padding: 0; }
+.job__tech li {
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem;
+  padding: 2px 8px; border-radius: 6px; color: var(--muted); background: var(--bg-alt); border: 1px solid var(--border);
+}
+
+.extras { display: grid; gap: 0 48px; }
+@media (min-width: 900px) { .extras { grid-template-columns: 1fr 1fr; } }
 .edu-title { font-size: 1.35rem; margin: 56px 0 20px; }
+.edu-title--sm { font-size: 1.05rem; margin: 28px 0 12px; }
 .edu { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 .edu__card { padding: 20px 22px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); }
 .edu__card h4 { margin: 4px 0; font-size: 1.05rem; line-height: 1.3; }
