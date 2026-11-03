@@ -1,7 +1,8 @@
 // Portfolio interactions: theme, mobile menu, projects grid, screenshot viewer.
 (() => {
   const root = document.documentElement;
-  const img = (n) => `assets/img/portfolio-${String(n).padStart(2, '0')}.png`;
+  const img = (n) => `assets/img/portfolio-${String(n).padStart(2, '0')}.jpg`;
+  const thumb = (n) => `assets/img/thumbs/portfolio-${String(n).padStart(2, '0')}.jpg`;
 
   const PROJECTS = [
     { name: 'BayarNow', desc: 'Payment gateway integration for government agencies (MDA) using FPX services.', cat: 'finance', tag: 'Payments · Century Software', shots: [25] },
@@ -38,7 +39,7 @@
     <article class="project" data-cat="${p.cat}">
       <button type="button" class="project__btn" data-index="${i}" aria-label="View ${p.name} screenshots">
         <div class="project__img">
-          <img src="${img(p.shots[0])}" alt="" loading="lazy">
+          <img src="${thumb(p.shots[0])}" alt="" loading="lazy" width="720" height="405">
         </div>
         <div class="project__body">
           <span class="project__tag">${p.tag}</span>
