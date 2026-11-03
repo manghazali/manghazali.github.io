@@ -32,6 +32,9 @@
   document.querySelectorAll('[data-years-since]').forEach((el) => {
     el.textContent = `${new Date().getFullYear() - Number(el.dataset.yearsSince)}+`;
   });
+  document.querySelectorAll('[data-years-num]').forEach((el) => {
+    el.textContent = new Date().getFullYear() - Number(el.dataset.yearsNum);
+  });
 
   // Projects grid
   const grid = document.getElementById('projects');

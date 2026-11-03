@@ -18,7 +18,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b2d'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EHG%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Apply saved theme before paint to avoid a flash -->
@@ -43,6 +43,7 @@
 
         <h1 class="profile__name">Hazman Ghazali</h1>
         <p class="profile__role">Senior Software Engineer</p>
+        <p class="profile__stack">backend · payments · fintech</p>
         <p class="profile__tag">Backend &amp; fintech engineer building payment gateways, integrations and transaction platforms.</p>
 
         <ul class="profile__facts">
@@ -59,6 +60,7 @@
         <nav class="toc" aria-label="Sections">
           <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#systems">Systems</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#work">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -109,10 +111,79 @@
           </p>
         </div>
 
-        <ul class="highlights">
-          <li><strong>Payment gateways</strong><span>FPX, online banking and card payments for merchants and government agencies</span></li>
-          <li><strong>Integrations</strong><span>REST APIs, e-Invoice, settlement H2H and HubSpot CRM</span></li>
-          <li><strong>Production support</strong><span>Troubleshooting, monitoring, UAT and release management</span></li>
+        <figure class="api" aria-label="Profile as an API response">
+          <div class="api__bar">
+            <span class="api__method">GET</span>
+            <span class="api__path">/api/v1/engineers/hazman</span>
+            <span class="api__status"><span class="api__dot"></span>200 OK</span>
+          </div>
+<pre class="api__body"><code>{
+  <span class="k">"name"</span>: <span class="s">"Hazman Ghazali"</span>,
+  <span class="k">"role"</span>: <span class="s">"Senior Software Engineer"</span>,
+  <span class="k">"focus"</span>: [<span class="s">"payment gateways"</span>, <span class="s">"REST APIs"</span>, <span class="s">"settlement H2H"</span>, <span class="s">"e-Invoice"</span>],
+  <span class="k">"stack"</span>: [<span class="s">"PHP"</span>, <span class="s">"Laravel"</span>, <span class="s">"Java"</span>, <span class="s">"Spring Boot"</span>, <span class="s">"MySQL"</span>, <span class="s">"Redis"</span>, <span class="s">"Kafka"</span>],
+  <span class="k">"experience_years"</span>: <span class="n" data-years-num="2018">8</span>,
+  <span class="k">"current"</span>: <span class="s">"SimplePay Gateway (SenangPay)"</span>,
+  <span class="k">"location"</span>: <span class="s">"Kuala Lumpur, MY"</span>
+}</code></pre>
+        </figure>
+      </section>
+
+      <!-- Systems -->
+      <section class="section" id="systems" aria-labelledby="systems-h">
+        <h2 class="section__title" id="systems-h">Systems I build</h2>
+        <p class="section__lead">
+          A typical payment flow I work on at SimplePay: merchants connect through plugins or the REST API, the gateway routes
+          payments to FPX, cards and online banking, and back-office services handle callbacks, settlement and compliance.
+        </p>
+
+        <div class="diagram" role="img" aria-label="Payment gateway architecture: merchant store and payment plugins call the gateway REST API, which routes to FPX, card and online banking channels and sends callbacks to the merchant. The gateway also feeds settlement H2H with banks, merchant reconciliation, e-Invoice submission and HubSpot CRM, backed by MySQL and Redis.">
+          <svg viewBox="0 0 760 330" aria-hidden="true">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 10 5 0 10z" class="d-head"/>
+              </marker>
+            </defs>
+
+            <!-- top row: request path -->
+            <g class="d-node"><rect x="10" y="30" width="150" height="62" rx="8"/><text x="85" y="56">Merchant store</text><text x="85" y="76" class="d-sub">checkout</text></g>
+            <g class="d-node"><rect x="200" y="30" width="150" height="62" rx="8"/><text x="275" y="56">Payment plugins</text><text x="275" y="76" class="d-sub">WooCommerce · HikaShop</text></g>
+            <g class="d-node d-core"><rect x="390" y="22" width="170" height="78" rx="8"/><text x="475" y="52">Gateway REST API</text><text x="475" y="72" class="d-sub">PHP · Laravel · Java</text><text x="475" y="88" class="d-sub">MySQL · Redis</text></g>
+            <g class="d-node"><rect x="600" y="30" width="150" height="62" rx="8"/><text x="675" y="56">Payment channels</text><text x="675" y="76" class="d-sub">FPX · Cards · Banking</text></g>
+
+            <path class="d-edge" d="M160 61H198" marker-end="url(#arr)"/>
+            <path class="d-edge" d="M350 61H388" marker-end="url(#arr)"/>
+            <path class="d-edge" d="M560 61H598" marker-end="url(#arr)"/>
+
+            <!-- callback -->
+            <path class="d-edge d-dash" d="M475 22V10H85V28" marker-end="url(#arr)"/>
+            <rect x="244" y="2" width="72" height="16" rx="4" class="d-label-bg"/><text x="280" y="14" class="d-label">callback</text>
+
+            <!-- bus down to back office -->
+            <path class="d-edge" d="M475 100V170"/>
+            <path class="d-edge" d="M85 170H675"/>
+            <path class="d-edge" d="M85 170V218" marker-end="url(#arr)"/>
+            <path class="d-edge" d="M275 170V218" marker-end="url(#arr)"/>
+            <path class="d-edge" d="M475 170V218" marker-end="url(#arr)"/>
+            <path class="d-edge" d="M675 170V218" marker-end="url(#arr)"/>
+            <rect x="490" y="128" width="98" height="16" rx="4" class="d-label-bg"/><text x="539" y="140" class="d-label">transactions</text>
+
+            <!-- bottom row: back office -->
+            <g class="d-node"><rect x="10" y="220" width="150" height="62" rx="8"/><text x="85" y="246">HubSpot CRM</text><text x="85" y="266" class="d-sub">merchant automation</text></g>
+            <g class="d-node"><rect x="200" y="220" width="150" height="62" rx="8"/><text x="275" y="246">Reconciliation</text><text x="275" y="266" class="d-sub">merchant settlement</text></g>
+            <g class="d-node"><rect x="400" y="220" width="150" height="62" rx="8"/><text x="475" y="246">Settlement H2H</text><text x="475" y="266" class="d-sub">host-to-host · banks</text></g>
+            <g class="d-node"><rect x="600" y="220" width="150" height="62" rx="8"/><text x="675" y="246">e-Invoice</text><text x="675" y="266" class="d-sub">LHDN validation</text></g>
+
+            <path class="d-edge d-dash" d="M400 251H352" marker-end="url(#arr)"/>
+            <text x="380" y="316" class="d-caption">Back office: settlement, reconciliation, compliance, CRM</text>
+          </svg>
+        </div>
+        <p class="diagram__hint" aria-hidden="true">← swipe to see the full diagram →</p>
+
+        <ul class="capabilities">
+          <li><span class="cap__k">integrations</span><strong>Payment channels</strong><span>FPX, online banking and card payments for merchants and government agencies (BayarNow, iPayment)</span></li>
+          <li><span class="cap__k">reliability</span><strong>Settlement &amp; reconciliation</strong><span>H2H settlement with banks and automated merchant reconciliation</span></li>
+          <li><span class="cap__k">operations</span><strong>Production support</strong><span>Callbacks, API timeouts, settlement discrepancies, monitoring and releases</span></li>
         </ul>
       </section>
 
@@ -281,14 +352,14 @@
       <section class="section" id="skills" aria-labelledby="skills-h">
         <h2 class="section__title" id="skills-h">Skills</h2>
         <dl class="skills">
-          <div><dt>Languages</dt><dd>PHP, Java, Kotlin, JavaScript, SQL</dd></div>
-          <div><dt>Frameworks</dt><dd>Laravel, Spring Boot, Zend Framework, jQuery, AJAX, Smarty</dd></div>
-          <div><dt>APIs &amp; integration</dt><dd>REST API, JSON, Web Services, FPX, Credit Card, e-Invoice, Settlement H2H, HubSpot API</dd></div>
-          <div><dt>Data &amp; cloud</dt><dd>MySQL, PostgreSQL, Redis, Kafka, Alibaba Cloud</dd></div>
-          <div><dt>CI/CD &amp; DevOps</dt><dd>Docker, Maven, GitLab CI/CD, SonarQube, Nexus Repository, NPM, Git</dd></div>
-          <div><dt>Monitoring</dt><dd>Datadog, Alibaba Cloud Monitoring</dd></div>
-          <div><dt>Tools</dt><dd>Postman, Jira, Notion, ClickUp</dd></div>
-          <div><dt>Languages spoken</dt><dd>Malay (native), English (professional working proficiency)</dd></div>
+          <div><dt>Languages</dt><dd><code>PHP</code><code>Java</code><code>Kotlin</code><code>JavaScript</code><code>SQL</code></dd></div>
+          <div><dt>Frameworks</dt><dd><code>Laravel</code><code>Spring Boot</code><code>Zend Framework</code><code>jQuery</code><code>AJAX</code><code>Smarty</code></dd></div>
+          <div><dt>APIs &amp; payments</dt><dd><code>REST</code><code>JSON</code><code>Web Services</code><code>FPX</code><code>Credit Card</code><code>Settlement H2H</code><code>e-Invoice</code><code>HubSpot API</code></dd></div>
+          <div><dt>Data &amp; messaging</dt><dd><code>MySQL</code><code>PostgreSQL</code><code>Redis</code><code>Kafka</code></dd></div>
+          <div><dt>Infra &amp; delivery</dt><dd><code>Docker</code><code>Alibaba Cloud</code><code>GitLab CI/CD</code><code>Maven</code><code>Nexus</code><code>SonarQube</code><code>NPM</code><code>Git</code></dd></div>
+          <div><dt>Observability</dt><dd><code>Datadog</code><code>Alibaba Cloud Monitoring</code></dd></div>
+          <div><dt>Testing &amp; workflow</dt><dd><code>Postman</code><code>Jira</code><code>Notion</code><code>ClickUp</code></dd></div>
+          <div><dt>Languages spoken</dt><dd class="plain">Malay (native), English (professional working proficiency)</dd></div>
         </dl>
       </section>
 
