@@ -4,15 +4,15 @@
   const img = (n) => `assets/img/portfolio-${String(n).padStart(2, '0')}.png`;
 
   const PROJECTS = [
+    { name: 'BayarNow', desc: 'Payment gateway integration for government agencies (MDA) using FPX services.', cat: 'finance', tag: 'Payments · Century Software', shots: [25] },
+    { name: 'iPayment', desc: 'Government payment system for the Ministry of Finance (MOF).', cat: 'finance', tag: 'Payments · Century Software', shots: [23, 24] },
+    { name: 'SSPNi-Plus (SPU & SPO)', desc: 'Education savings plan systems with payment modules, FPX and credit card integrations.', cat: 'finance', tag: 'Finance · PTPTN', shots: [7, 8, 11, 12, 13, 14, 15, 16, 17, 18] },
+    { name: 'Source Fund System (DANA)', desc: 'PTPTN source fund management system.', cat: 'finance', tag: 'Finance · PTPTN', shots: [9, 10] },
+    { name: 'eMAS', desc: 'e-Learning materials system for managing and delivering course content.', cat: 'education', tag: 'Education · OUM', shots: [1, 2] },
+    { name: 'Alumni Management System', desc: 'Alumni registration, profiles and engagement portal.', cat: 'education', tag: 'Education · OUM', shots: [3, 4] },
+    { name: 'Scholarship Management System', desc: 'Scholarship application and processing system.', cat: 'education', tag: 'Education · OUM', shots: [5, 6] },
+    { name: 'centrOUM', desc: 'Central university portal; maintained and enhanced its modules and APIs.', cat: 'education', tag: 'Education · OUM', shots: [21, 22] },
     { name: 'HIS@KKM', desc: 'Health information system for the Ministry of Health Malaysia.', cat: 'health', tag: 'Healthcare', shots: [19, 20] },
-    { name: 'Simpan SSPN Plus', desc: 'Education savings plan platform: registration, contributions and member services.', cat: 'finance', tag: 'Finance', shots: [7, 8, 11, 12, 13, 14, 15, 16, 17, 18] },
-    { name: 'Sistem Pengurusan Dana', desc: 'Fund management system for tracking and administering funds.', cat: 'finance', tag: 'Finance', shots: [9, 10] },
-    { name: 'iPayment', desc: 'Online payment module for fees and transactions.', cat: 'finance', tag: 'Payments', shots: [23, 24] },
-    { name: 'BayarNow', desc: 'Quick-pay portal for settling outstanding payments online.', cat: 'finance', tag: 'Payments', shots: [25] },
-    { name: 'e-Learning Materials System', desc: 'Manage and deliver course learning materials to students.', cat: 'education', tag: 'Education', shots: [1, 2] },
-    { name: 'Alumni System', desc: 'Alumni registration, profiles and engagement portal.', cat: 'education', tag: 'Education', shots: [3, 4] },
-    { name: 'Scholarship', desc: 'Scholarship application and processing system.', cat: 'education', tag: 'Education', shots: [5, 6] },
-    { name: 'CentrOUM', desc: 'Central student services portal.', cat: 'education', tag: 'Education', shots: [21, 22] },
   ];
 
   // Theme toggle
