@@ -26,16 +26,6 @@
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
 
-  // Mobile menu
-  const menuBtn = document.getElementById('menu-toggle');
-  const links = document.getElementById('nav-links');
-  const setMenu = (open) => {
-    links.classList.toggle('is-open', open);
-    menuBtn.setAttribute('aria-expanded', String(open));
-  };
-  menuBtn.addEventListener('click', () => setMenu(!links.classList.contains('is-open')));
-  links.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
-
   // Dynamic numbers
   document.getElementById('year').textContent = new Date().getFullYear();
   document.querySelectorAll('[data-years-since]').forEach((el) => {
@@ -49,12 +39,12 @@
       <button type="button" class="project__btn" data-index="${i}" aria-label="View ${p.name} screenshots">
         <div class="project__img">
           <img src="${img(p.shots[0])}" alt="" loading="lazy">
-          <span class="project__count">${p.shots.length} ${p.shots.length === 1 ? 'screenshot' : 'screenshots'}</span>
         </div>
         <div class="project__body">
           <span class="project__tag">${p.tag}</span>
           <h3>${p.name}</h3>
           <p>${p.desc}</p>
+          <span class="project__more">View ${p.shots.length} ${p.shots.length === 1 ? 'screenshot' : 'screenshots'} →</span>
         </div>
       </button>
     </article>`).join('');
@@ -107,8 +97,8 @@
     if (e.key === 'ArrowRight') step(1);
   });
 
-  // Highlight the nav link for the section in view
-  const navLinks = [...links.querySelectorAll('a')];
+  // Highlight the sidebar link for the section in view
+  const navLinks = [...document.querySelectorAll('.toc a')];
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
       if (!en.isIntersecting) return;
