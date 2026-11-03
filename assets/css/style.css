@@ -261,11 +261,6 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .job h3 { font-size: 1.1rem; }
 .job__org { font-weight: 500; margin-top: 4px; }
 .job__meta { color: var(--muted); font-size: .9rem; margin-top: 2px; }
-.job__logo--text {
-  display: grid; place-items: center; padding: 0;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2)); border: 0;
-  color: #fff; font-weight: 800; font-size: .95rem;
-}
 .job__list { margin: 12px 0 0; padding-left: 18px; color: var(--muted); font-size: .93rem; }
 .job__list li { margin-top: 4px; }
 .job__list li::marker { color: var(--accent); }
